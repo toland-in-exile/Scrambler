@@ -4,6 +4,12 @@ import sys
 lineNum = 0
 
 fileIn = open(f'{sys.argv[1]}', 'r')
+if len(sys.argv) > 2:
+    nameIn = {sys.argv[2]}
+else:
+    nameIn = 'encrypted keys'
+
+outNameList = nameIn
 
 for line in fileIn:
     strIn = line
