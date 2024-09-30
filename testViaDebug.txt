@@ -1,3 +1,4 @@
+
 Here we go! A test file for the scrambler to work on.
 I think i'll go ahead and use it as a to-do list so that its more than just the lorem ipsum.
 first thing, at least from this point, is to get it to read and encrypt the lines from this file, one at a time.
