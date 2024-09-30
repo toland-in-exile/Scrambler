@@ -1,0 +1,16 @@
+Here we go! A test file for the scrambler to work on.
+I think i'll go ahead and use it as a to-do list so that its more than just the lorem ipsum.
+first thing, at least from this point, is to get it to read and encrypt the lines from this file, one at a time.
+1a - hardcode to use this file
+1b - take argument from app call via the sys.argv[] method in the sys module
+second, I want it to, instead of spitting out the encrypted text and key to cmd, output two new text files.
+third, i want that those two files to be named via a second argument to the app call, that gets cut in half, and each half given to one of the files.
+for example, second arg = "Cast in the name of God, ye not guilty", and names the encrypted text "Cast in the name of God" and the key "ye not guilty".
+I'll give it optional behaviour to cut at a coma or period near the middle if (secArg.find(',' , '.', '/', '\') + 2) == len(secArg) / 2 or (secArg.find(',' , '.', '/', '\') - 2) == len(secArg),
+or else just cut in the middle with a len(secArg) // 2 floor return.
+fourth, I want to add formatting to the output text file. all caps, no punctuation. i dont think I'll need a way to handle 4 or higher digit numbers, but i'll take a look anyhow.
+fifth, I'd like to add junk data to the encrypted string generation. I'll use set wordbanks to pad out each line to a set amount of characters.
+this means each encrypted text file will look like an organized wall of text, and that without the key to show you which words are bunk, you cant even start to unscramble the file.
+the last bit will be creating a decryptor program, or maybe even turn scrambler.py into a function, and build a decryption function in that, allowing the user to selectively run etiher or.
+this'll need both files to be presented to it as arguments, and probably use a the zip method from csv handling to build a dictionary.
+build the dict, then yank out anything attached to the marker for bunk data, and order list, output as string line by line to get the deryption done.
