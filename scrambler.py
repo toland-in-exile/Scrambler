@@ -1,7 +1,8 @@
 import random
+import sys
 
-fileIn = open('testViaDebug.txt', 'r')
-
+fileIn = open(f'{sys.argv[1]}', 'r')
+lineNum = 0
 for line in fileIn:
     strIn = fileIn.readline()
     userIn = strIn.split()
@@ -13,8 +14,8 @@ for line in fileIn:
         remWord = userIn.pop(remDex)
         encrypted.append(remWord)
         key.append(keyList.index(remWord))
-        print(' '.join(map(str, encrypted)))
-        print(' '.join(map(str, key)))
+    print(f'line processed: {lineNum}')
+    lineNum += 1
 
 
 
