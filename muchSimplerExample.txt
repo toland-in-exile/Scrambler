@@ -1,0 +1,9 @@
+You plug
+in words 
+and it
+shuffles them,
+makes a 
+decrypt key
+and spits
+them back
+out
