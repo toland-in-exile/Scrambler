@@ -9,3 +9,15 @@ done - 3a - add optional behaviour to cut at a special character near the middle
 5a - first, explicitly set a max length per line, and enable string lists to be cut to fit to that amount of characters
 5b - then, build wordbanks that fit the ranges necessary to fill in a word. an if-else should work fine to select from the banks and fill in
 6 - decryptor program
+
+done - 1 read and encrypt lines from this file
+done - 1a hardcode to use this file
+done - 1b take argument from init call to use this file
+done - 2 change to not spit the encryption and key to cmd call, but to generate text files
+done - 3 added ability to name the two files by providing a third argument
+done - 3a add optional behaviour to cut at a special character near the middle of the third argument string (secArg.find(',' , '.', '/', '\') + 2) == len(secArg) / 2 or (secArg.find(',' , '.', '/', '\') - 2) == len(secArg)
+4 add formatting to the output text file. all caps, no punctuation. I dont think ill need a way to handle 4 or higher digit numbers, but i'll take a look anyhow. while the lines are pulled apart, run all caps and find/remove before reassembly
+5 add junk data to the encrypted string, using set wordbanks to fill in until we get to a uniform number of characters per line
+5a first, explicitly set a max length per line, and enable string lists to be cut to fit to that amount of characters
+5b then, build wordbanks that fit the ranges necessary to fill in a word. an if-else should work fine to select from the banks and fill in
+6 decryptor program

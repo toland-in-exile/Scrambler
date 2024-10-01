@@ -40,7 +40,7 @@ if sys.argv[1] == '-decrypt':
     if len(sys.argv) > 4:
         outFile = open(f'{sys.argv[4]}' + '.txt', 'a')
     else:
-        outFile = open('defaultOut.txt')
+        outFile = open('defaultOut.txt', 'a')
 
     for line in scramFile:
         decrypt = str(line)
@@ -52,6 +52,7 @@ if sys.argv[1] == '-decrypt':
         for counter in range(0, len(keyWordPair)):
             clearLine = clearLine + ' ' + str((keyWordPair.get(counter)))
         outFile.write(clearLine)
+        outFile.write('\n')
 
 if sys.argv[1] == '-help':
     print('Application for encrypting and decrypting text files.')
