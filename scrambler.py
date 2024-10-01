@@ -34,7 +34,18 @@ if sys.argv[1] == '-encrypt':
                 keyFile.write('\n')
 
 if sys.argv[1] == '-decrypt':
-    print('lets crack this egg')
+    scramFile = open(sys.argv[2])
+    keyFile = open(sys.argv[3])
+    for line in scramFile:
+        decrypt = str(line)
+        decryptList = decrypt.split()
+        keyList = str(keyFile.readline())
+        keyListList = map(int, keyList.split())
+        keyWordPair = dict(zip(keyListList, decryptList))
+        clearLine = ''
+        for counter in range(0, len(keyWordPair)):
+            clearLine = clearLine + ' ' + (keyWordPair.get(counter))
+        print(clearLine)
 
 if sys.argv[1] == '-help':
     print('Application for encrypting and decrypting text files.')
