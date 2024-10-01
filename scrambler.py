@@ -27,10 +27,10 @@ if sys.argv[1] == '-encrypt':
             remWord = userIn.pop(remDex)
             encrypted.append(remWord)
             key.append(keyList.index(remWord))
-        with open(' '.join(map(str, encNameList)) + '.txt', 'a') as scramFile:
+        with open(''.join(map(str, encNameList)) + '.txt', 'a') as scramFile:
             scramFile.write(' '.join(map(str, encrypted)))
             scramFile.write('\n')
-        with open(' '.join(map(str, keyNameList)) + '.txt', 'a') as keyFile:
+        with open(''.join(map(str, keyNameList)) + '.txt', 'a') as keyFile:
             keyFile.write((' '.join(map(str, key))))
             keyFile.write('\n')
 
@@ -38,4 +38,13 @@ if sys.argv[1] == '-encrypt':
     scramFile.close()
     keyFile.close()
 
+if sys.argv[1] == '-decrypt':
+    print('lets crack this egg')
 
+if sys.argv[1] == '-help':
+    print('Application for encrypting and decrypting text files.')
+    print('Initial flags are -encrypt, -decrypt, and -help')
+    print('-encrypt requires follow on argument of the target file, and an optional argument for a string name')
+    print('example: python scrambler.py -encrypt simplestExample.txt "I love my wife all of the bunchies"')
+    print('-decrypt requires follow on argument of target encrypted file, target key file, and optional argument of output name')
+    print('example: python scrambler.py - decrypt Ilovemywife.txt allofthebunchies.txt decryptedtext.txt')
