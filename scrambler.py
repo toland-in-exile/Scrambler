@@ -34,8 +34,14 @@ if sys.argv[1] == '-encrypt':
                 keyFile.write('\n')
 
 if sys.argv[1] == '-decrypt':
-    scramFile = open(sys.argv[2])
-    keyFile = open(sys.argv[3])
+    scramFile = open(sys.argv[2], 'r')
+    keyFile = open(sys.argv[3], 'r')
+
+    if len(sys.argv) > 4:
+        outFile = open(f'{sys.argv[4]}' + '.txt', 'a')
+    else:
+        outFile = open('defaultOut.txt')
+
     for line in scramFile:
         decrypt = str(line)
         decryptList = decrypt.split()
@@ -44,8 +50,8 @@ if sys.argv[1] == '-decrypt':
         keyWordPair = dict(zip(keyListList, decryptList))
         clearLine = ''
         for counter in range(0, len(keyWordPair)):
-            clearLine = clearLine + ' ' + (keyWordPair.get(counter))
-        print(clearLine)
+            clearLine = clearLine + ' ' + str((keyWordPair.get(counter)))
+        outFile.write(clearLine)
 
 if sys.argv[1] == '-help':
     print('Application for encrypting and decrypting text files.')

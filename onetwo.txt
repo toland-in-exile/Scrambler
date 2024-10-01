@@ -1,9 +1,0 @@
-You plug
-in words
-and it
-shuffles them,
-a makes
-decrypt key
-and spits
-back them
-out
